@@ -4,16 +4,20 @@ import com.example.instagram.helper.ConfiguracaoFirebase;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Usuario {
+public class Usuario implements Serializable {
 
     private String id;
     private String nome;
     private String email;
     private String senha;
     private String caminhoFoto;
+    private int seguidores = 0;
+    private int seguindo = 0;
+    private int postagens = 0;
 
     public Usuario() {
     }
@@ -41,9 +45,36 @@ public class Usuario {
         usuarioMap.put("nome", getNome());
         usuarioMap.put("id", getId());
         usuarioMap.put("caminhoFoto", getCaminhoFoto());
+        usuarioMap.put("seguidores", getSeguidores());
+        usuarioMap.put("seguindo", getSeguindo());
+        usuarioMap.put("postagens", getPostagens());
 
         return usuarioMap;
 
+    }
+
+    public int getSeguidores() {
+        return seguidores;
+    }
+
+    public void setSeguidores(int seguidores) {
+        this.seguidores = seguidores;
+    }
+
+    public int getSeguindo() {
+        return seguindo;
+    }
+
+    public void setSeguindo(int seguindo) {
+        this.seguindo = seguindo;
+    }
+
+    public int getPostagens() {
+        return postagens;
+    }
+
+    public void setPostagens(int postagens) {
+        this.postagens = postagens;
     }
 
     public String getId() {
