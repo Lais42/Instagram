@@ -47,6 +47,9 @@ dependencies {
     //Dependências bottom navigationEX
     implementation 'com.github.ittianyu:BottomNavigationViewEx:1.2.4'
 
+    //Dependências AndroidPhotoFilter
+    implementation 'info.androidhive:imagefilters:1.0.7'
+
     //Dependências circle image view
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
